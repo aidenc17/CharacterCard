@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CharacterCardTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CharacterCard(
+                    CardImage(
 
                         //modifier = Modifier.padding(innerPadding)
                     )
@@ -49,10 +49,10 @@ fun TitleCost(){
 }
 
 @Composable
-fun CharacterCard() {
+fun CardImage() {
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            //.fillMaxSize()
             .padding(16.dp)
     ) {
         TitleCost()
@@ -60,8 +60,8 @@ fun CharacterCard() {
             painter = painterResource(id = R.drawable.screenshot_2025_02_13_at_12_44_04pm),
             contentDescription = "Rocket",
             modifier = Modifier
-                .fillMaxWidth()
-                .height(200.dp)
+                //.fillMaxWidth()
+                .height(100.dp)
                 .padding(8.dp)
         )
         CardType()
@@ -76,6 +76,6 @@ fun CharacterCard() {
 @Composable
 fun CharacterCardPreview() {
     CharacterCardTheme {
-        CharacterCard()
+        CardImage()
     }
 }
