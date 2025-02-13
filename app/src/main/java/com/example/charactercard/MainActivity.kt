@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -50,22 +51,7 @@ fun TitleCost(){
 
 @Composable
 fun CardImage() {
-    Column(
-        modifier = Modifier
-            //.fillMaxSize()
-            .padding(16.dp)
-    ) {
-        TitleCost()
-        Image(
-            painter = painterResource(id = R.drawable.screenshot_2025_02_13_at_12_44_04pm),
-            contentDescription = "Rocket",
-            modifier = Modifier
-                //.fillMaxWidth()
-                .height(100.dp)
-                .padding(8.dp)
-        )
-        CardType()
-        CardTextStats()
+
     }
 }
 
@@ -75,7 +61,10 @@ fun CardImage() {
 @Preview(showBackground = true)
 @Composable
 fun CharacterCardPreview() {
+    Row {
+        
+    }
     CharacterCardTheme {
-        CardImage()
+
     }
 }
