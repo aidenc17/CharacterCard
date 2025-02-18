@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -29,6 +30,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -41,7 +43,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CharacterCardTheme {
                 Scaffold(modifier = Modifier.fillMaxSize(), content = { innerPadding ->
-
+                    CardImage(modifier = Modifier.padding(innerPadding))
 
                 })
             }
@@ -49,17 +51,28 @@ class MainActivity : ComponentActivity() {
     }
 }
 @Composable
-fun CardImage() {
-//    CardType()
-//    CardTextStats()
-    TitleCost()
-    RocketRacoon()
+fun CardImage(modifier: Modifier = Modifier) {
+    Column (
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Gray),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.CenterHorizontally
+
+    ){
+        TitleCost()
+        RocketRacoon()
+        CardType()
+        CardTextStats()
+    }
+
+
 }
 
 @Composable
 fun RocketRacoon(){
     Image(painter = painterResource(id = R.drawable.screenshot_2025_02_13_at_12_44_04pm),
-        contentDescription = "Rocket Racoon",
+        contentDescription = stringResource(R.string.rocket_racoon),
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
@@ -79,7 +92,7 @@ fun CardType(){
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            text = "89P13",
+            text = stringResource(R.string._89p13),
             fontSize = 20.sp
         )
         Row(
@@ -88,7 +101,7 @@ fun CardType(){
         ) {
             Icon(
                 imageVector = Icons.Filled.Info,
-                contentDescription = "INFO",
+                contentDescription = stringResource(R.string.info),
                 modifier = Modifier.size(25.dp)
             )
         }
@@ -103,14 +116,15 @@ fun CardTextStats() {
             .height(200.dp)
             .border(2.dp, Color.Black)
             .padding(8.dp)
+
     ) {
         Text(
-            text = "When Rocket Raccoon deals damage to an enemy, he plants a hidden explosive on them. At the start of each round, the explosive has a 50% chance to detonate, dealing extra damage. If the enemy takes damage before their turn, the explosive triggers immediately, causing an additional chain reaction that damages nearby targets.",
-            fontSize = 16.sp,
+            text = stringResource(R.string.rocketDescription),
+            fontSize = 17.sp,
             modifier = Modifier.align(Alignment.TopStart)
         )
         Text(
-            text = "6/4",
+            text = stringResource(R.string.toughness),
             fontSize = 20.sp,
             modifier = Modifier.align(Alignment.BottomEnd)
         )
@@ -128,7 +142,7 @@ fun TitleCost() {
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            text = "Rocket Racoon",
+            text = stringResource(R.string.rocketTitle),
             fontSize = 20.sp
         )
         Row(
@@ -137,14 +151,14 @@ fun TitleCost() {
             // alignment issue when using the Arrangement.End modifier, it split into three instead of 1 and 1
         ) {
             Text(
-                text = "5",
+                text = stringResource(R.string.nextToWrench),
                 fontSize = 16.sp
             )
             Spacer(modifier = Modifier.width(7.dp)) // Adds spacing between number and icon
 
             Icon(
                 imageVector = Icons.Filled.Build,
-                contentDescription = "Wrench",
+                contentDescription = stringResource(R.string.wrench),
                 modifier = Modifier.size(25.dp)
             )
         }
@@ -171,8 +185,13 @@ fun CardTypePreview() {
 }
 
 @Composable
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 fun CardTextStatsPreview() {
     CardTextStats()
 }
 
+@Composable
+@Preview(showBackground = true)
+fun CardImagePreview() {
+    CardImage()
+}

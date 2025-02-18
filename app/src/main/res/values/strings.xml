@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CharacterCard</string>
+    <string name="rocket_racoon">Rocket Racoon</string>
+    <string name="_89p13">89P13</string>
+    <string name="info">INFO</string>
+    <string name="rocketDescription">When Rocket Raccoon deals damage to an enemy, he plants a hidden explosive on them. At the start of each round, the explosive has a 50% chance to detonate, dealing extra damage. If the enemy takes damage before their turn, the explosive triggers immediately, causing an additional chain reaction that damages nearby targets.</string>
+    <string name="toughness">6/4</string>
+    <string name="rocketTitle">Rocket Racoon</string>
+    <string name="nextToWrench">5</string>
+    <string name="wrench">Wrench</string>
 </resources>
