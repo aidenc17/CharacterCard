@@ -19,6 +19,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -51,7 +52,7 @@ fun CardImage() {
 //    CardType()
 //    CardTextStats()
     TitleCost()
-// RocketRacoon()
+    RocketRacoon()
 }
 
 @Composable
@@ -68,8 +69,31 @@ fun RocketRacoon(){
 
 @Composable
 fun CardType(){
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp)
+            .border(3.dp, Color.Black)
+            .padding(10.dp),
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text(
+            text = "89P13",
+            fontSize = 20.sp
+        )
+        Row(
+            horizontalArrangement = Arrangement.End,
 
+        ) {
+            Icon(
+                imageVector = Icons.Filled.Info,
+                contentDescription = "INFO",
+                modifier = Modifier.size(25.dp)
+            )
+        }
+    }
 }
+
 @Composable
 fun CardTextStats(){
 
@@ -86,7 +110,7 @@ fun TitleCost() {
     ) {
         Text(
             text = "Rocket Racoon",
-            fontSize = 16.sp
+            fontSize = 20.sp
         )
         Row(
             horizontalArrangement = Arrangement.End,
@@ -102,7 +126,7 @@ fun TitleCost() {
             Icon(
                 imageVector = Icons.Filled.Build,
                 contentDescription = "Wrench",
-                modifier = Modifier.size(16.dp)
+                modifier = Modifier.size(25.dp)
             )
         }
     }
@@ -114,19 +138,16 @@ fun TitleCost() {
     fun TitleCostPreview() {
     TitleCost()
 }
+
 @Composable
-@Preview
+//@Preview(showBackground = true)
 fun RocketRacoonPreview() {
     RocketRacoon()
 }
 
-//@Preview(showBackground = true)
 @Composable
-fun CharacterCardPreview() {
-    Row {
-
-    }
-    CharacterCardTheme {
-
-    }
+@Preview(showBackground = true)
+fun CardTypePreview() {
+    CardType()
 }
+
