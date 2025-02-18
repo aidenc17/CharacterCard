@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
@@ -95,9 +96,27 @@ fun CardType(){
 }
 
 @Composable
-fun CardTextStats(){
-
+fun CardTextStats() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(200.dp)
+            .border(2.dp, Color.Black)
+            .padding(8.dp)
+    ) {
+        Text(
+            text = "When Rocket Raccoon deals damage to an enemy, he plants a hidden explosive on them. At the start of each round, the explosive has a 50% chance to detonate, dealing extra damage. If the enemy takes damage before their turn, the explosive triggers immediately, causing an additional chain reaction that damages nearby targets.",
+            fontSize = 16.sp,
+            modifier = Modifier.align(Alignment.TopStart)
+        )
+        Text(
+            text = "6/4",
+            fontSize = 20.sp,
+            modifier = Modifier.align(Alignment.BottomEnd)
+        )
+    }
 }
+
 @Composable
 fun TitleCost() {
     Row(
@@ -146,8 +165,14 @@ fun RocketRacoonPreview() {
 }
 
 @Composable
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 fun CardTypePreview() {
     CardType()
+}
+
+@Composable
+@Preview(showBackground = true)
+fun CardTextStatsPreview() {
+    CardTextStats()
 }
 
