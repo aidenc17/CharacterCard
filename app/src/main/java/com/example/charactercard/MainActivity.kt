@@ -112,10 +112,11 @@ fun CardType(){
 fun CardTextStats() {
     Box(
         modifier = Modifier
+            .size(376.dp)
             .fillMaxWidth()
             .height(200.dp)
             .border(2.dp, Color.Black)
-            .padding(8.dp)
+            .padding(11.dp)
 
     ) {
         Text(
