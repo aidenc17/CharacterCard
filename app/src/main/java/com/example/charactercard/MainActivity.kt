@@ -23,6 +23,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -49,7 +50,20 @@ class MainActivity : ComponentActivity() {
 fun CardImage() {
 //    CardType()
 //    CardTextStats()
-//    TitleCost()
+    TitleCost()
+// RocketRacoon()
+}
+
+@Composable
+fun RocketRacoon(){
+    Image(painter = painterResource(id = R.drawable.screenshot_2025_02_13_at_12_44_04pm),
+        contentDescription = "Rocket Racoon",
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+            .border(3.dp, Color.Black),
+            alignment = Alignment.Center
+        )
 }
 
 @Composable
@@ -66,7 +80,7 @@ fun TitleCost() {
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
-            .border(1.dp, Color.Black)
+            .border(3.dp, Color.Black)
             .padding(10.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
@@ -96,18 +110,23 @@ fun TitleCost() {
 
 
 @Composable
-@Preview(showBackground = true)
+//@Preview(showBackground = )
     fun TitleCostPreview() {
     TitleCost()
+}
+@Composable
+@Preview
+fun RocketRacoonPreview() {
+    RocketRacoon()
+}
 
-    //@Preview(showBackground = true)
-    @Composable
-    fun CharacterCardPreview() {
-        Row {
+//@Preview(showBackground = true)
+@Composable
+fun CharacterCardPreview() {
+    Row {
 
-        }
-        CharacterCardTheme {
+    }
+    CharacterCardTheme {
 
-        }
     }
 }
