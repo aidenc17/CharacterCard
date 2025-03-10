@@ -71,10 +71,12 @@ fun CardImage(modifier: Modifier = Modifier) {
 
 @Composable
 fun RocketRacoon(){
-    Image(painter = painterResource(id = R.drawable.screenshot_2025_02_13_at_12_44_04pm),
+    Image(painter = painterResource(id = R.drawable.screenshot_2025_03_10_at_12_47_58pm),
         contentDescription = stringResource(R.string.rocket_racoon),
         modifier = Modifier
             .fillMaxWidth()
+            .height(484.dp)
+            .width(400.dp)
             .padding(16.dp)
             .border(3.dp, Color.Black),
             alignment = Alignment.Center
